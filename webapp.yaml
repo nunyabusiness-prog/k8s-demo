@@ -42,7 +42,7 @@ kind: Service
 metadata:
   name: webapp-service
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     # should match the label of the pods
     # that belong to the service
@@ -50,5 +50,4 @@ spec:
   ports:
     - protocol: TCP
       port: 80 # internal port
-      nodePort: 30100 # external port
       targetPort: 3000 # excessible on the node's ip
